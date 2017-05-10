@@ -49,9 +49,9 @@ Enumeration.prototype = {
 
   reduce: function(array, callback){
     var counter = 0;
-    for(var num of array){
-      console.log(counter);
-      counter += num;
+    for(var item of array) {
+      callback(item);
+      counter += item
     }
     return counter;
   },
