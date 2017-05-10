@@ -12,7 +12,54 @@ Enumeration.prototype = {
   },
 
   map: function(array, callback){
+    var newArray = [];
+    for(var num of array){
+      newArray.push(callback(num));
+    }
+    return newArray;
+  },
 
+  filter: function(array, callback){
+    var evenArray = [];
+    for(var num of array){
+      if(callback(num)){
+        evenArray.push(num)
+      }
+    }
+    return evenArray;
+  },
+
+  some: function(array, callback){
+    for(var num of array){
+      if(callback(num)){
+        return true;
+      }
+    }
+    return false;
+  },
+
+  every: function(array, callback){
+    for(var num of array){
+      if(callback(num) === false){
+        return false;
+      }
+    }
+    return true
+  },
+
+  reduce: function(array, callback){
+    var counter = 0;
+    for(var num of array){
+      console.log(counter);
+      counter += num;
+    }
+    return counter;
+  },
+
+  forEach: function(array, callback){
+    for(var item of array){
+      callback(item);
+    }
   }
 
 }

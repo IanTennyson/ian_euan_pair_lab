@@ -26,13 +26,13 @@ describe('My Enumeration Library', function() {
     }), [ 2, 4, 6, 8, 10, 12 ])
   });
 
-  xit("can filter an array (to only even numbers)", function() {
+  it("can filter an array (to only even numbers)", function() {
     assert.deepEqual( myEnumLib.filter( testArrayOfNumbers, function( number ) {
       return number % 2 === 0;
     }), [ 2, 4, 6 ])
   });
 
-  xit("returns true if *some* elements meet a condition", function() {
+  it("returns true if *some* elements meet a condition", function() {
     assert.equal( myEnumLib.some( testArrayOfNumbers, function( number ) {
       return number > 3;
     }), true );
@@ -41,7 +41,7 @@ describe('My Enumeration Library', function() {
     }), false );
   });
 
-  xit("returns true if *every* element meets a condition", function() {
+  it("returns true if *every* element meets a condition", function() {
     assert.equal( myEnumLib.every( testArrayOfNumbers, function( number ) {
       return number > 0;
     }), true )
@@ -50,7 +50,7 @@ describe('My Enumeration Library', function() {
     }), false )
   });
 
-  xit("can reduce an array (to the sum of its items)", function() {
+  it("can reduce an array (to the sum of its items)", function() {
     assert.equal( myEnumLib.reduce( testArrayOfNumbers, function( a, b ) {
       return a + b;
     }), 21 ) // 1 + 2 + 3 + 4 + 5 + 6 === 21
